@@ -56,6 +56,4 @@ client.connect((err) => {
     });
 });
 
-app.listen(port, () => {
-    console.log("Listening to you, Port 5000!");
-});
+app.listen(process.env.PORT || port);
