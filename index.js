@@ -13,6 +13,10 @@ const client = new MongoClient(uri, {
     useUnifiedTopology: true,
 });
 
+app.get("/", (req, res) => {
+    res.send("Hello form DataBase");
+});
+
 client.connect((err) => {
     const productsCollection = client.db("emaJohnStore").collection("products");
     const ordersCollection = client.db("emaJohnStore").collection("orders");
@@ -56,6 +60,6 @@ client.connect((err) => {
     });
 });
 
-app.listen(process.env.PORT || port , () => {
-    console.log("Listening to you, Port 5000")
+app.listen(5000, () => {
+    console.log("Listening to you, Port 5000");
 });
